@@ -12,6 +12,9 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { HeroService } from './hero.service';
 import { HeroSearchComponent } from './hero-search.component';
 
+import { DwComponent } from './dw/dw.component';
+import { DwProjectNavComponent } from './dw/dw-project-nav.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,7 +26,9 @@ import { HeroSearchComponent } from './hero-search.component';
   declarations: [
     AppComponent,
     HeroSearchComponent,
-    routedComponents
+    routedComponents,
+    DwComponent,
+    DwProjectNavComponent
   ],
   providers: [
     HeroService
