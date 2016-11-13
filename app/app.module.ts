@@ -14,6 +14,7 @@ import { HeroSearchComponent } from './hero-search.component';
 
 import { DwComponent } from './dw/dw.component';
 import { DwProjectNavComponent } from './dw/dw-project-nav.component';
+import { SimulationsComponent } from './simulations/simulations.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { DwProjectNavComponent } from './dw/dw-project-nav.component';
     HeroSearchComponent,
     routedComponents,
     DwComponent,
-    DwProjectNavComponent
+    DwProjectNavComponent,
+    SimulationsComponent
   ],
   providers: [
     HeroService

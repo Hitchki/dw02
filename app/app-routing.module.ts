@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DwComponent } from './dw/dw.component';
 import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
+
+import { DwComponent } from './dw/dw.component';
+import { SimulationsComponent } from './simulations/simulations.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
   {
     path: 'dw',
     component: DwComponent
+  },
+  {
+    path: 'simulations',
+    component: SimulationsComponent
   },
   {
     path: 'dashboard',
