@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a routerLink="/dw" routerLinkActive="active">Denkwelten</a>
+      <a routerLink="/simulations" routerLinkActive="active">Simulations</a>
     </nav>
     <router-outlet></router-outlet>
   `,
