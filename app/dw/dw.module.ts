@@ -5,6 +5,7 @@ import { DwComponent}   from './dw.component';
 import { DwProjectNavComponent } from './dw-project-nav.component';
 import { DwInfoAreaComponent } from './info-area/dw-info-area.component';
 import { DwBaseAreaComponent } from './base-area/dw-base-area.component';
+import { DwNormtextComponent } from './normtext/dw-normtext.component';
 
 @NgModule({
   imports: [BrowserModule],
@@ -14,6 +15,7 @@ import { DwBaseAreaComponent } from './base-area/dw-base-area.component';
     DwProjectNavComponent,
     DwBaseAreaComponent,
     DwInfoAreaComponent,
+    DwNormtextComponent,
   ],
   providers: [],
 })

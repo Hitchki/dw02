@@ -14,6 +14,7 @@ export class DwComponent implements OnInit {
   private startcontent;
   private content;
   private searchtree;
+  private infoContent;
 
   constructor(
     private dwService: DwService,
@@ -30,6 +31,7 @@ export class DwComponent implements OnInit {
     console.log('this.projects', this.projects);
     this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
     this.content = this.startcontent;
+    this.infoContent = undefined;
     console.log('this.startcontent', this.startcontent);
     // this.searchtree = this.startcontent['searchtree'];
     console.log('this.searchtree', this.searchtree);
