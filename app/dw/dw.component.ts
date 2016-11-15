@@ -11,7 +11,9 @@ import { Headers, Http } from '@angular/http';
 })
 export class DwComponent implements OnInit {
   private projects: any;
-  public startcontent;
+  private startcontent;
+  private content;
+  private searchtree;
 
   constructor(
     private dwService: DwService,
@@ -27,7 +29,10 @@ export class DwComponent implements OnInit {
     this.projects = jsonData.projects;
     console.log('this.projects', this.projects);
     this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
+    this.content = this.startcontent;
     console.log('this.startcontent', this.startcontent);
+    // this.searchtree = this.startcontent['searchtree'];
+    console.log('this.searchtree', this.searchtree);
   }
 
   getData() {

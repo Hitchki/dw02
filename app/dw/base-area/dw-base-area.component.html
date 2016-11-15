@@ -1,1 +1,9 @@
 <div>dwBaseAreaComponent.html</div>
+
+<div *ngFor="let contentItem of content">
+  <div *ngIf="contentItem.normtext">{{ contentItem.normtext | json }}</div>
+  <div *ngIf="contentItem.searchtree">{{ contentItem.searchtree | json }}</div>
+</div>
+
+
+<!--<div *ngFor="let contentItem of content">{{ content | json }}</div>-->
