@@ -12,10 +12,13 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { HeroService } from './hero.service';
 import { HeroSearchComponent } from './hero-search.component';
 
+import { DwModule } from './dw/dw.module';
+
 import { DwComponent } from './dw/dw.component';
 import { DwProjectNavComponent } from './dw/dw-project-nav.component';
 import { DwInfoAreaComponent } from './dw/info-area/dw-info-area.component';
 import { DwBaseAreaComponent } from './dw/base-area/dw-base-area.component';
+
 import { SimulationsComponent } from './simulations/simulations.component';
 
 @NgModule({
@@ -25,15 +28,18 @@ import { SimulationsComponent } from './simulations/simulations.component';
     AppRoutingModule,
     HttpModule,
     // InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
+
+    DwModule
   ],
   declarations: [
     AppComponent,
     HeroSearchComponent,
     routedComponents,
-    DwComponent,
-    DwProjectNavComponent,
-    DwBaseAreaComponent,
-    DwInfoAreaComponent,
+    // DwComponent,
+    // DwProjectNavComponent,
+    // DwBaseAreaComponent,
+    // DwInfoAreaComponent,
+
     SimulationsComponent
   ],
   providers: [
