@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 // import { Input, Output, EventEmitter } from '@angular/core';
 
+import { DwNormtext  } from '../dw-project.interface';
+
 @Component({
   moduleId: module.id,
   selector: 'dw-normtext',
@@ -9,7 +11,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DwNormtextComponent implements OnInit {
   // @Input('normtextcontent') private content: string;
-  content: string;
+  content: DwNormtext;
 
   constructor() {
   }

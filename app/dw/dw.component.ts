@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DwService } from './dw.service';
-
 import { Headers, Http } from '@angular/http';
+
+import { DwService } from './dw.service';
+import { DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
 
 @Component({
   moduleId: module.id,
@@ -10,11 +11,11 @@ import { Headers, Http } from '@angular/http';
   providers: [ DwService ]
 })
 export class DwComponent implements OnInit {
-  private projects: any;
-  private startcontent;
-  private content;
-  private searchtree;
-  private infoContent;
+  private projects: DwProjects;
+  private startcontent: DwContent;
+  private content: DwContent;
+  private searchtree: DwSearchtree;
+  private infoContent: DwContent;
 
   constructor(
     private dwService: DwService,
@@ -25,7 +26,7 @@ export class DwComponent implements OnInit {
     this.getData();
   }
 
-  processData(jsonData) {
+  processData(jsonData: any) {
     let contentPath = ['projects','subprojects', 'contentstart' ];
     this.projects = jsonData.projects;
     console.log('this.projects', this.projects);
