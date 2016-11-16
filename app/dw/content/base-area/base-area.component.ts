@@ -4,7 +4,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
 @Component({
     moduleId: module.id,
     selector: 'dw-base-area',
-    templateUrl: 'dw-base-area.component.html',
+    templateUrl: 'base-area.component.html',
     // inputs: ['contact']
 })
 export class BaseAreaComponent implements OnInit {

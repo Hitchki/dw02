@@ -1,3 +1,10 @@
-<div>InfoAreaComponent.html</div>
-{{infocontent}}
-<div>ENDE InfoAreaComponent.html</div>
+<div *ngFor="let contentItem of infocontent">
+  <div *ngIf="contentItem.normtext">
+    <dw-normtext [normtextcontent]="contentItem.normtext">contentItem.normtext:::{{contentItem.normtext}}</dw-normtext>
+  </div>
+  <div *ngIf="contentItem.searchtree">{{ contentItem.searchtree | json }}</div>
+</div>
+
+<!--<div>InfoAreaComponent.html</div>-->
+<!--{{infocontent | json}}-->
+<!--<div>ENDE InfoAreaComponent.html</div>-->

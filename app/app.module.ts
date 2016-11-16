@@ -15,9 +15,9 @@ import { HeroSearchComponent } from './hero-search.component';
 import { DwModule } from './dw/dw.module';
 
 import { DwComponent } from './dw/dw.component';
-import { DwProjectNavComponent } from './dw/dw-project-nav.component';
-import { DwInfoAreaComponent } from './dw/content/info-area/dw-info-area.component';
-import { DwBaseAreaComponent } from './dw/content/base-area/dw-base-area.component';
+// import { DwProjectNavComponent } from './dw/dw-project-nav.component';
+// import { DwInfoAreaComponent } from './dw/content/info-area/dw-info-area.component';
+// import { DwBaseAreaComponent } from './dw/content/base-area/dw-base-area.component';
 
 import { SimulationsComponent } from './simulations/simulations.component';
 
@@ -31,14 +31,19 @@ import { SimulationsComponent } from './simulations/simulations.component';
 
     DwModule
   ],
+  exports: [
+    BrowserModule,
+    // FormsModule,
+    // AppRoutingModule,
+    // HttpModule,
+    // // InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
+    //
+    // DwModule
+  ],
   declarations: [
     AppComponent,
     HeroSearchComponent,
     routedComponents,
-    // DwComponent,
-    // DwProjectNavComponent,
-    // DwBaseAreaComponent,
-    // DwInfoAreaComponent,
 
     SimulationsComponent
   ],
