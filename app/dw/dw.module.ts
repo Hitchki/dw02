@@ -6,20 +6,19 @@ import { ProjectNavModule } from './project-nav/project-nav.module';
 import { ContentModule } from './content/content.module'
 
 // import { DwInfoAreaComponent } from './content/info-area/dw-info-area.component';
-import { DwBaseAreaComponent } from './base-area/dw-base-area.component';
+// import { DwBaseAreaComponent } from './content/base-area/dw-base-area.component';
 // import { DwNormtextComponent } from './normtext/dw-normtext.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ProjectNavModule,
-    ContentModule,
     ContentModule
   ],
   exports: [],
   declarations: [
     DwComponent,
-    DwBaseAreaComponent,
+    // DwBaseAreaComponent,
     // DwInfoAreaComponent,
     // DwNormtextComponent,
   ],

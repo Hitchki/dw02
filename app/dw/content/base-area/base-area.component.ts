@@ -7,7 +7,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
     templateUrl: 'dw-base-area.component.html',
     // inputs: ['contact']
 })
-export class DwBaseAreaComponent implements OnInit {
+export class BaseAreaComponent implements OnInit {
   @Input() content: string;
 
     constructor() { }
