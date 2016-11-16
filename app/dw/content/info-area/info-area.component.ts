@@ -4,10 +4,10 @@ import { Input, Output, EventEmitter } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'dw-info-area',
-  templateUrl: 'dw-info-area.component.html',
-  inputs: ['infoContent']
+  templateUrl: 'info-area.component.html',
+  inputs: ['infocontent']
 })
-export class DwInfoAreaComponent implements OnInit {
+export class InfoAreaComponent implements OnInit {
     // @Input() infoContent: string;
 
     constructor() { }

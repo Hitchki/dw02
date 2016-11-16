@@ -6,10 +6,10 @@ import { DwNormtext  } from '../dw-project.interface';
 @Component({
   moduleId: module.id,
   selector: 'dw-normtext',
-  templateUrl: 'dw-normtext.component.html',
+  templateUrl: 'normtext.component.html',
   inputs: ['content: normtextcontent']
 })
-export class DwNormtextComponent implements OnInit {
+export class NormtextComponent implements OnInit {
   // @Input('normtextcontent') private content: string;
   content: DwNormtext;
 

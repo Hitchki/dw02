@@ -16,7 +16,7 @@ import { DwModule } from './dw/dw.module';
 
 import { DwComponent } from './dw/dw.component';
 import { DwProjectNavComponent } from './dw/dw-project-nav.component';
-import { DwInfoAreaComponent } from './dw/info-area/dw-info-area.component';
+import { DwInfoAreaComponent } from './dw/content/info-area/dw-info-area.component';
 import { DwBaseAreaComponent } from './dw/base-area/dw-base-area.component';
 
 import { SimulationsComponent } from './simulations/simulations.component';
