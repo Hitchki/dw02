@@ -17,6 +17,9 @@ const routes: Routes = [
   {
     path: 'dw',
     component: DwComponent
+  },  {
+    path: 'dw/:dwpath',
+    component: DwComponent
   },
   {
     path: 'simulations',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { DwService } from './dw.service';
 import { DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
@@ -11,16 +12,21 @@ import { DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
   providers: [ DwService ]
 })
 export class DwComponent implements OnInit {
-  private projects: DwProjects;
-  private startcontent: DwContent;
-  private content: DwContent;
-  private searchtree: DwSearchtree;
-  private infoContent: DwContent;
+  projects: DwProjects;
+  startcontent: DwContent;
+  content: DwContent;
+  searchtree: DwSearchtree;
+  infoContent: DwContent;
+  dwpath: string;
 
   constructor(
     private dwService: DwService,
-    public http: Http
-  ){ }
+    private route: ActivatedRoute,
+    private http: Http
+  ){
+    this.dwpath = this.route.snapshot.params['dwpath'];
+    // console.log('dwpath', this.dwpath);
+  }
 
   ngOnInit() {
     this.getData();
