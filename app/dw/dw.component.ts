@@ -9,7 +9,8 @@ import { DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
   moduleId: module.id,
   selector: 'dw',
   templateUrl: './dw.component.html',
-  providers: [ DwService ]
+  providers: [ DwService ],
+  styleUrls: [ './dw.component.css' ]
 })
 export class DwComponent implements OnInit {
   projects: DwProjects;

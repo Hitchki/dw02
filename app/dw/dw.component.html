@@ -1,8 +1,16 @@
 dwComponent.html
-<button (click)="getData()">getData</button>
-<dw-project-nav [projects]="projects">project-nav</dw-project-nav>
-<!--<dw-base-area>dw-base-area</dw-base-area>-->
-<dw-base-area [content]="content">dw-base-area</dw-base-area>
-<dw-info-area [infoContent]="infoContent">dw-info-area</dw-info-area>
+
+<div class="flex-container">
+  <div class="flex-item">abc</div>
+  <div class="flex-item">def</div>
+</div>
+
+<div class="flex-container">
+  <!--<button (click)="getData()">getData</button>-->
+  <div class="flex-item"><dw-project-nav [projects]="projects">project-nav</dw-project-nav></div>
+  <!--<dw-base-area>dw-base-area</dw-base-area>-->
+  <dw-base-area class="flex-item" [content]="content">dw-base-area</dw-base-area>
+  <!--<dw-info-area class="flex-item" [infoContent]="infoContent">dw-info-area</dw-info-area>-->
+</div>
 
 <!--<div>projects <pre>{{projects | json}}</pre></div>-->
