@@ -33,16 +33,20 @@ export class DwComponent implements OnInit {
     this.getData();
   }
 
+  processData1(jsonData: any) {
+    let contentPath = ['projects','subprojects', 'contentstart' ];
+    this.projects = jsonData.projects;
+    this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
+    this.content = this.startcontent;
+    this.infoContent = this.content;
+  }
+
   processData(jsonData: any) {
     let contentPath = ['projects','subprojects', 'contentstart' ];
     this.projects = jsonData.projects;
-    console.log('this.projects', this.projects);
     this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
     this.content = this.startcontent;
-    this.infoContent = undefined;
-    console.log('this.startcontent', this.startcontent);
-    // this.searchtree = this.startcontent['searchtree'];
-    console.log('this.searchtree', this.searchtree);
+    this.infoContent = this.content;
   }
 
   getData() {
