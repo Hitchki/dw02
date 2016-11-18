@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { DwService } from './dw.service';
-import { DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
+import { ContentPathItem, DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
 
 @Component({
   moduleId: module.id,
@@ -34,11 +34,51 @@ export class DwComponent implements OnInit {
   }
 
   processData1(jsonData: any) {
-    let contentPath = ['projects','subprojects', 'contentstart' ];
+    let rawContentPathArray: ContentPathItem[];
+    let contentPathArray: ContentPathItem[];
+    let tmpObj: any;
+
+    rawContentPathArray = [
+      {indexName: 'projects', pos: 0},
+      {indexName: 'subprojects', pos: 0},
+      {indexName: 'contentstart', pos: 2},
+    ];
+
+    // contentPathArray = rawContentPathArray.filter( pathItem => true );  //alle nicht correcten Teile entfernen
+
+    tmpObj = jsonData;
+
+    console.log('jsonData', tmpObj);
+    let invalidItemFound = false;
+    contentPathArray =rawContentPathArray.filter( pathItem => {
+      if (!tmpObj || invalidItemFound) return false;
+      tmpObj = tmpObj[pathItem.indexName];
+      if (!tmpObj) { invalidItemFound = true; return false; }
+      if (pathItem.pos !== undefined) {
+        tmpObj = tmpObj[pathItem.pos];
+        if (!tmpObj) { invalidItemFound = true; return false; }
+      }
+      return true;
+    });  //alle nicht correcten Teile entfernen
+
+    console.log('contentPathArray', contentPathArray);
+
+    tmpObj = jsonData;
+    var contentPathArray1 = contentPathArray.map( pathItem => {
+      tmpObj = tmpObj[pathItem.indexName];
+      if (pathItem.pos !== undefined) {
+        tmpObj = tmpObj[pathItem.pos];
+      }
+      pathItem['obj'] = tmpObj;
+      return pathItem;
+    });
+
+    console.log('contentPathArray1', contentPathArray1);
+
     this.projects = jsonData.projects;
-    this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
-    this.content = this.startcontent;
-    this.infoContent = this.content;
+    // this.startcontent = jsonData[contentPath[0]][0][contentPath[1]][0][contentPath[2]];
+    // this.content = this.startcontent;
+    // this.infoContent = this.content;
   }
 
   processData(jsonData: any) {

@@ -1,3 +1,8 @@
+export interface ContentPathItem {
+  indexName: string;
+  pos: number;
+}
+
 export interface DwProjects {
   projects: DwProject[]
 }
