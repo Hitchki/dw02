@@ -9,12 +9,28 @@ import { SimService } from '../sim.service'
   inputs: ['simid']
 })
 export class SimNodeComponent {
+  private simid: number;
+  private result: string;
 
   constructor(
     private simService: SimService
   ){ }
 
   ngOnInit() {
-    // this.simService.setSimTimer()
+    this.subscribeToTimer()
+  }
+
+  subscribeToTimer() {
+    var subSubject = this.simService.simTimer$.subscribe(
+      (x: any) => {
+        this.result = `Timerticks #${this.simid}: ${x}`;
+        console.log(this.result);
+      },
+      (e: any) =>  { console.log('onError: ' + e.message); },
+      () =>  { console.log('onCompleted'); });
+  }
+
+  connectToNode () : void {
+      // this.simService.
   }
 }

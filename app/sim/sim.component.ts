@@ -11,11 +11,13 @@ export class SimComponent {
 
   constructor(
     private simService: SimService
-  ){ }
+  ){
+    // this.startSimulation();
+  }
 
   ngOnInit() {
     // this.simService.setSimTimer();
-    this.startSimulation()
+    // this.startSimulation();
   }
 
   startSimulation() {
