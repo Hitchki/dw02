@@ -13,13 +13,14 @@ import { HeroService } from './hero.service';
 import { HeroSearchComponent } from './hero-search.component';
 
 import { DwModule } from './dw/dw.module';
+import { SimModule } from './sim/sim.module';
 
 import { DwComponent } from './dw/dw.component';
 // import { DwProjectNavComponent } from './dw/dw-project-nav.component';
 // import { DwInfoAreaComponent } from './dw/content/info-area/dw-info-area.component';
 // import { DwBaseAreaComponent } from './dw/content/base-area/dw-base-area.component';
 
-import { SimulationsComponent } from './simulations/simulations.component';
+import { SimComponent } from './sim/sim.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { SimulationsComponent } from './simulations/simulations.component';
     HttpModule,
     // InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 })
 
-    DwModule
+    DwModule,
+    SimModule
   ],
   exports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { SimulationsComponent } from './simulations/simulations.component';
     HeroSearchComponent,
     routedComponents,
 
-    SimulationsComponent
+    // SimComponent
   ],
   providers: [
     HeroService

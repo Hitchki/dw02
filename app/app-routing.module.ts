@@ -6,7 +6,7 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 
 import { DwComponent } from './dw/dw.component';
-import { SimulationsComponent } from './simulations/simulations.component';
+import { SimComponent } from './sim/sim.component';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'simulations',
-    component: SimulationsComponent
+    component: SimComponent
   },
   {
     path: 'dashboard',
