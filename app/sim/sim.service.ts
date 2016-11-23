@@ -4,6 +4,32 @@ import { Subject } from 'rxjs/Subject';
 
 import { Http, Response } from '@angular/http';
 
+import 'firebase';
+
+// let config = {
+//   apiKey: ,
+//   authDomain:
+//   databaseURL: ',
+//   storageBucket: ,
+//   messagingSenderId:
+//   };
+
+  var config = {
+    apiKey: "AIzaSyBmfrG4J1EgGdjStSX7qiZb2wzFEv_56XE",
+    authDomain: "denkwelten.firebaseapp.com",
+    databaseURL: "https://denkwelten.firebaseio.com",
+    storageBucket: "denkwelten.appspot.com",
+    messagingSenderId: "684226708322"
+  };
+
+firebase.initializeApp(config);
+let root = firebase.database().ref('franz/xxx');
+root.on('value', function(snap) {
+  console.log('snap', snap.key, snap.val());
+});
+
+console.log('firebase', firebase);
+
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/timeInterval';
 
@@ -37,7 +63,10 @@ export class SimService {
   }
 
   public setSimTimer() {
-    let source = Observable.interval(1000);
+    let source = Observable.interval(1000)
+      .take(5)
+      .map( x => x * 10)
+      .do( () => console.log('lllll'));
     // var source = Observable.range(1, 1000);
 
     this.simTimer$ = new Subject();
