@@ -3,13 +3,15 @@ import { Headers, Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { DwService } from './dw.service';
+import { FirebaseService } from './dw.firebase.service';
+
 import { ContentPathItem, DwProjects, DwContent, DwSearchtree } from './dw-project.interface';
 
 @Component({
   moduleId: module.id,
   selector: 'dw',
   templateUrl: './dw.component.html',
-  providers: [ DwService ],
+  providers: [ DwService, FirebaseService ],
   styleUrls: [ './dw.component.css' ]
 })
 export class DwComponent implements OnInit {
@@ -22,6 +24,7 @@ export class DwComponent implements OnInit {
 
   constructor(
     private dwService: DwService,
+    private firebaseService: FirebaseService,
     private route: ActivatedRoute,
     private http: Http
   ){
@@ -31,6 +34,12 @@ export class DwComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.initFirebase();
+  }
+
+  initFirebase() {
+    this.firebaseService.initFirebase();
+    this.firebaseService.consoleTestFirebase();
   }
 
   processData1(jsonData: any) {
