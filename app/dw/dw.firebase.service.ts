@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import 'firebase';
+// import {initializeApp, database } from 'firebase';
 
 @Injectable()
 export class FirebaseService {
@@ -19,14 +20,6 @@ export class FirebaseService {
     };
 
     firebase.initializeApp(config);
-
-
-    let root = firebase.database().ref('franz/xxx');
-    root.on('value', function(snap) {
-      console.log('snap', snap.key, snap.val());
-    });
-
-    console.log('firebase', firebase);
   }
 
   public consoleTestFirebase() {
@@ -35,6 +28,6 @@ export class FirebaseService {
       console.log('snap', snap.key, snap.val());
     });
 
-    console.log('firebase', firebase);
+    // console.log('firebase', database);
   }
 }
