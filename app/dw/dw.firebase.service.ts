@@ -28,6 +28,22 @@ export class FirebaseService {
       console.log('snap', snap.key, snap.val());
     });
 
+    root.push({
+        created: 'adfadf',
+        'text': 'adfjaldfjasdklfjaslkfjdkl'
+      }, err => {
+        if (err) {
+          alert('errornpm start' + err);
+        } else {
+          root.once('value', snap => {
+              let ref = snap.val();
+              console.log(ref);
+              console.log(snap.key);
+            }
+          )
+        }
+    });
+
     // console.log('firebase', database);
   }
 }
